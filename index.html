@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M. Mohamed Safeek | Freelance Video Editor</title>
+<meta name="description" content="Portfolio of M. Mohamed Safeek, a freelance video editor creating cinematic edits, reels, YouTube videos and promotional content for creators and brands.">
+<meta name="theme-color" content="#0a0a0c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08080a; --bg2:#0f0f13; --card:#14141a; --line:#24242e;
+  --text:#f4f4f7; --muted:#a0a0b0;
+  --accent:#7c5cff; --accent2:#3d8bff;
+  --grad:linear-gradient(135deg,var(--accent),var(--accent2));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Space Grotesk','Inter',sans-serif;line-height:1.15}
+a{color:inherit;text-decoration:none}
+img,svg{max-width:100%}
+.container{width:min(1140px,100% - 40px);margin-inline:auto}
+section{padding:96px 0;position:relative}
+:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;color:#000;padding:8px 14px;z-index:999}
+.skip:focus{left:10px;top:10px}
+
+/* NAV */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s}
+header.scrolled{background:rgba(8,8,10,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-family:'Space Grotesk';font-weight:700;font-size:1.15rem;letter-spacing:.5px}
+.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{font-size:.92rem;color:var(--muted);transition:.2s}
+nav a:hover,nav a.active{color:#fff}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.7rem;cursor:pointer}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid transparent;cursor:pointer;transition:.25s;font-family:inherit}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 30px -8px rgba(124,92,255,.7)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 36px -8px rgba(61,139,255,.8)}
+.btn-ghost{border-color:#3a3a48;color:#fff;background:transparent}
+.btn-ghost:hover{border-color:var(--accent2);background:rgba(61,139,255,.08);transform:translateY(-3px)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:90px}
+.hero-bg{position:absolute;inset:0;z-index:0;
+  background:
+   radial-gradient(600px 400px at 80% 20%,rgba(124,92,255,.28),transparent 70%),
+   radial-gradient(500px 400px at 10% 90%,rgba(61,139,255,.2),transparent 70%),
+   var(--bg)}
+.film{position:absolute;inset:0;z-index:0;opacity:.06;
+  background-image:repeating-linear-gradient(90deg,#fff 0 2px,transparent 2px 60px)}
+.hero .container{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.tag{display:inline-block;padding:6px 16px;border:1px solid var(--line);border-radius:999px;font-size:.8rem;color:var(--muted);margin-bottom:22px;background:rgba(255,255,255,.03)}
+.tag i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#2ee59d;margin-right:8px;box-shadow:0 0 10px #2ee59d}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.4rem);font-weight:700;margin-bottom:22px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:560px;font-size:1.08rem;margin-bottom:34px}
+.cta{display:flex;gap:16px;flex-wrap:wrap}
+
+/* editor mock */
+.editor{background:#101015;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 30px 80px -20px rgba(124,92,255,.35);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+.dots{display:flex;gap:6px;margin-bottom:12px}.dots b{width:10px;height:10px;border-radius:50%;background:#2c2c38}
+.screen{aspect-ratio:16/9;border-radius:10px;background:linear-gradient(135deg,#1a1233,#0d1b3a);display:grid;place-items:center;position:relative;overflow:hidden}
+.play{width:64px;height:64px;border-radius:50%;background:var(--grad);display:grid;place-items:center;box-shadow:0 0 40px rgba(124,92,255,.7)}
+.play::after{content:"";border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+.timeline{margin-top:14px;display:grid;gap:7px}
+.track{height:16px;border-radius:5px;background:#1a1a22;position:relative;overflow:hidden}
+.clip{position:absolute;top:2px;bottom:2px;border-radius:4px;opacity:.9}
+.playhead{position:absolute;top:-4px;bottom:-4px;width:2px;background:#fff;left:10%;animation:scrub 7s linear infinite;z-index:2}
+@keyframes scrub{to{left:92%}}
+
+/* SECTION HEAD */
+.eyebrow{color:var(--accent2);font-size:.82rem;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.title{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:16px}
+.lead{color:var(--muted);max-width:620px}
+.center{text-align:center}.center .lead{margin-inline:auto}
+.head{margin-bottom:56px}
+
+/* ABOUT */
+.about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.portrait{aspect-ratio:4/5;border-radius:20px;border:1px solid var(--line);background:linear-gradient(160deg,#1c1440,#0c1a38);display:grid;place-items:center;position:relative;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.portrait .initials{font-family:'Space Grotesk';font-size:6rem;font-weight:700}
+.portrait small{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:var(--muted);font-size:.75rem}
+.about p{color:var(--muted);margin-bottom:18px}
+.stats{display:flex;gap:30px;margin-top:28px;flex-wrap:wrap}
+.stats div b{display:block;font-family:'Space Grotesk';font-size:1.5rem}
+.stats div span{color:var(--muted);font-size:.85rem}
+
+/* SERVICES */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px;transition:.3s;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;background:var(--grad);opacity:0;transition:.3s;z-index:0}
+.card>*{position:relative;z-index:1}
+.card:hover{transform:translateY(-8px);border-color:#3b3b52;box-shadow:0 20px 50px -20px rgba(124,92,255,.5)}
+.card:hover::before{opacity:.06}
+.icon{width:52px;height:52px;border-radius:14px;background:rgba(124,92,255,.12);border:1px solid rgba(124,92,255,.3);display:grid;place-items:center;font-size:1.5rem;margin-bottom:20px}
+.card h3{font-size:1.2rem;margin-bottom:10px}
+.card p{color:var(--muted);font-size:.95rem}
+
+/* PORTFOLIO */
+.work{background:var(--bg2)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:44px}
+.filter{background:transparent;border:1px solid var(--line);color:var(--muted);padding:9px 20px;border-radius:999px;cursor:pointer;font-family:inherit;font-size:.88rem;transition:.2s}
+.filter:hover{color:#fff;border-color:#4a4a60}
+.filter.on{background:var(--grad);color:#fff;border-color:transparent}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.project{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.project:hover{transform:translateY(-8px);border-color:#3b3b52}
+.thumb{aspect-ratio:16/9;position:relative;display:grid;place-items:center;cursor:pointer;overflow:hidden;border:0;width:100%;color:#fff}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumb .pbtn{position:relative;width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);display:grid;place-items:center;transition:.3s}
+.thumb .pbtn::after{content:"";border-left:14px solid #fff;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
+.project:hover .pbtn{transform:scale(1.15);background:var(--accent)}
+.badge{position:absolute;top:12px;left:12px;font-size:.7rem;padding:4px 10px;border-radius:999px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.2);z-index:1}
+.pinfo{padding:22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pinfo .cat{color:var(--accent2);font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
+.pinfo h3{font-size:1.1rem}
+.pinfo p{color:var(--muted);font-size:.9rem;flex:1}
+.watch{margin-top:8px;color:#fff;font-weight:600;font-size:.88rem;background:none;border:0;cursor:pointer;text-align:left;font-family:inherit}
+.watch:hover{color:var(--accent2)}
+.note{margin-top:34px;text-align:center;color:var(--muted);font-size:.85rem}
+
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-box{width:min(900px,100%);background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.modal-top{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line)}
+.modal-top button{background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+.player{aspect-ratio:16/9;background:#000;display:grid;place-items:center;text-align:center;color:var(--muted);padding:20px}
+.player iframe,.player video{width:100%;height:100%;border:0}
+
+/* SKILLS */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:26px 60px}
+.skill .row{display:flex;justify-content:space-between;margin-bottom:9px;font-size:.95rem;font-weight:500}
+.skill .row span:last-child{color:var(--muted)}
+.bar{height:8px;background:#1b1b24;border-radius:999px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:999px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+
+/* TOOLS */
+.tools{background:var(--bg2)}
+.tool{text-align:center;padding:38px 24px}
+.tlogo{width:84px;height:84px;border-radius:20px;margin:0 auto 20px;display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;font-size:2rem}
+.tool h3{font-size:1.1rem;margin-bottom:6px}
+.tool p{color:var(--muted);font-size:.88rem}
+
+/* TESTIMONIALS */
+.quote{font-size:.98rem;color:#d4d4de;margin-bottom:22px}
+.who{display:flex;gap:14px;align-items:center}
+.av{width:44px;height:44px;border-radius:50%;background:#23232e;display:grid;place-items:center;color:var(--muted)}
+.who b{display:block;font-size:.92rem}.who span{color:var(--muted);font-size:.8rem}
+.stars{color:#ffc247;margin-bottom:12px;letter-spacing:3px}
+.ph{display:inline-block;font-size:.68rem;color:var(--muted);border:1px dashed #44445a;border-radius:6px;padding:2px 8px;margin-bottom:14px}
+
+/* CONTACT */
+.contact{background:var(--bg2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.info{display:grid;gap:14px;margin:28px 0}
+.info div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+.info small{color:var(--muted);display:block;font-size:.78rem}
+form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px;display:grid;gap:18px}
+label{font-size:.85rem;color:var(--muted);display:grid;gap:7px}
+input,select,textarea{background:#0c0c10;border:1px solid var(--line);border-radius:12px;padding:13px 16px;color:#fff;font-family:inherit;font-size:.95rem;transition:.2s;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,92,255,.2)}
+textarea{min-height:130px;resize:vertical}
+.status{font-size:.88rem;min-height:1.3em;color:#2ee59d}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:50px 0 34px;text-align:center}
+footer h3{font-size:1.15rem;margin-bottom:6px}
+footer p{color:var(--muted)}
+.socials{display:flex;gap:12px;justify-content:center;margin:24px 0}
+.socials a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);transition:.25s;font-size:.8rem;font-weight:600}
+.socials a:hover{color:#fff;border-color:var(--accent);background:rgba(124,92,255,.15);transform:translateY(-3px)}
+.copy{margin-top:20px;font-size:.8rem;color:#6a6a7a}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(34px);transition:.8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+[hidden]{display:none!important}
+/* LIBRARY */
+.navbtn{background:none;border:0;font:inherit;font-size:.92rem;color:var(--muted);cursor:pointer;transition:.2s}
+.navbtn:hover{color:#fff}
+.lib{position:fixed;inset:0;z-index:90;background:rgba(8,8,10,.97);overflow-y:auto;display:none}
+.lib.open{display:block}
+.lib-wrap{width:min(1100px,100% - 32px);margin:0 auto;padding:28px 0 60px}
+.lib-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.lib-head h2{font-size:1.7rem}
+.lib-head button{background:none;border:0;color:#fff;font-size:2rem;cursor:pointer}
+.lib-note{color:var(--muted);font-size:.85rem;margin-bottom:20px;max-width:760px}
+.lib-bar{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.crumbs{font-size:.92rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.crumbs button{background:none;border:0;color:#fff;font:inherit;cursor:pointer;padding:2px 4px;border-radius:6px}
+.crumbs button:hover{color:var(--accent2)}
+.lib-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn.sm{padding:10px 18px;font-size:.85rem}
+.drop{border:2px dashed #34344a;border-radius:16px;padding:22px;text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:22px;transition:.2s}
+.drop.over{border-color:var(--accent);background:rgba(124,92,255,.08);color:#fff}
+.lib-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.lcard{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.lcard.folder{cursor:pointer}
+.lcard:hover{border-color:#3b3b52}
+.lthumbbtn{background:none;border:0;padding:0;cursor:pointer;display:block;width:100%}
+.lthumb{aspect-ratio:16/10;background:#0c0c10;display:grid;place-items:center;position:relative;overflow:hidden}
+.lthumb.big{font-size:2.8rem}
+.lthumb img,.lthumb video{width:100%;height:100%;object-fit:cover}
+.vtag{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.65);border-radius:6px;padding:2px 8px;font-size:.7rem}
+.lmeta{padding:10px 14px 4px}
+.lmeta b{display:block;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lmeta span{color:var(--muted);font-size:.75rem}
+.lbtns{display:flex;flex-wrap:wrap;gap:6px;padding:8px 14px 14px;margin-top:auto}
+.lbtns button{background:#1d1d27;border:1px solid var(--line);color:#ddd;font:inherit;font-size:.72rem;padding:5px 10px;border-radius:8px;cursor:pointer}
+.lbtns button:hover{border-color:var(--accent);color:#fff}
+.lbtns button[data-act^="del"]:hover{border-color:#ff6b6b;color:#ff9b9b}
+.lib-empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 0}
+.lib-status{margin-top:18px;font-size:.85rem;color:var(--muted);min-height:1.3em}
+@media(max-width:700px){nav li .navbtn{display:block;padding:14px 0;width:100%;text-align:left;border-bottom:1px solid var(--line)}}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .hero .container,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .grid3,.projects{grid-template-columns:repeat(2,1fr)}
+  .hero-visual{order:-1;max-width:460px}
+  .portrait{max-width:340px}
+}
+@media(max-width:700px){
+  section{padding:70px 0}
+  .menu-btn{display:block}
+  nav ul{position:fixed;inset:70px 0 auto 0;background:rgba(8,8,10,.97);flex-direction:column;gap:0;padding:10px 20px 20px;display:none;border-bottom:1px solid var(--line)}
+  nav ul.open{display:flex}
+  nav li a{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+  .grid3,.projects,.skills{grid-template-columns:1fr}
+  .skills{gap:22px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header id="top">
+  <div class="container nav">
+    <a href="#home" class="logo" aria-label="Home">M. Mohamed <span>Safeek</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <nav aria-label="Main navigation">
+      <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="navbtn" id="libOpen" type="button">Library</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div><div class="film"></div>
+  <div class="container">
+    <div>
+      <span class="tag"><i></i>Open for freelance projects &amp; collaborations</span>
+      <h1>Turning Your Ideas Into <span class="grad">Cinematic Experiences.</span></h1>
+      <p>I'm M. Mohamed Safeek, a freelance video editor passionate about transforming raw footage into engaging visual stories. I help creators, brands, and businesses bring their ideas to life through professional video editing.</p>
+      <div class="cta">
+        <a href="#work" class="btn btn-primary">Explore My Work &rarr;</a>
+        <a href="#contact" class="btn btn-ghost">Hire Me</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="editor">
+        <div class="dots"><b></b><b></b><b></b></div>
+        <div class="screen"><div class="play"></div></div>
+        <div class="timeline">
+          <div class="track"><div class="playhead"></div>
+            <div class="clip" style="left:2%;width:28%;background:#7c5cff"></div>
+            <div class="clip" style="left:32%;width:22%;background:#3d8bff"></div>
+            <div class="clip" style="left:56%;width:38%;background:#a78bfa"></div></div>
+          <div class="track">
+            <div class="clip" style="left:8%;width:40%;background:#2b6cb0"></div>
+            <div class="clip" style="left:52%;width:30%;background:#5b3fd1"></div></div>
+          <div class="track">
+            <div class="clip" style="left:0;width:92%;background:#2a2a38"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="portrait reveal">
+      <!-- To use your photo: replace the span below with <img src="your-photo.jpg" alt="M. Mohamed Safeek"> -->
+      <span class="initials grad">MS</span>
+      <small>Add your photo here</small>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">About Me</div>
+      <h2 class="title">A passionate freelance video editor.</h2>
+      <p>I'm M. Mohamed Safeek, a freelance video editor dedicated to creating visually engaging and impactful content. I focus on storytelling, creative transitions, cinematic colour grading, and professional editing techniques to deliver videos that connect with audiences.</p>
+      <p>I work with clients to understand their ideas and transform their footage into polished final videos.</p>
+      <div class="stats">
+        <div><b>Storytelling</b><span>First, always</span></div>
+        <div><b>Cinematic</b><span>Colour grading</span></div>
+        <div><b>Fast</b><span>Reliable delivery</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="head center reveal">
+      <div class="eyebrow">My Services</div>
+      <h2 class="title">What I can create for you</h2>
+      <p class="lead">From long-form stories to scroll-stopping shorts, every edit is crafted with intent.</p>
+    </div>
+    <div class="grid3" id="serviceGrid"></div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="container">
+    <div class="head center reveal">
+      <div class="eyebrow">My Portfolio</div>
+      <h2 class="title">Detailed Works</h2>
+      <p class="lead">A selection of edits and samples. Filter by category to explore.</p>
+    </div>
+    <div class="filters" id="filters" role="tablist" aria-label="Project categories"></div>
+    <div class="projects" id="projects"></div>
+    <p class="note">The projects shown are placeholders. Replace them in the <code>PROJECTS</code> list in the script at the bottom of this file.</p>
+  </div>
+</section>
+
+<!-- PUBLIC MEDIA (Firebase) -->
+<section id="media">
+  <div class="container">
+    <div class="head center reveal">
+      <div class="eyebrow">Media</div>
+      <h2 class="title">Files &amp; Folders</h2>
+      <p class="lead">Browse my videos, audio, photos and other files.</p>
+    </div>
+    <div class="lib-bar">
+      <div class="crumbs" id="mCrumbs"></div>
+      <div class="lib-actions" id="mAdmin" hidden>
+        <button class="btn btn-ghost sm" id="mNewFolder" type="button">+ New folder</button>
+        <button class="btn btn-primary sm" id="mLinkBtn" type="button">+ Add video / file link</button>
+      </div>
+    </div>
+    <p class="note" id="mSetup" hidden>Cloud uploads are not switched on yet. Add your Firebase settings to <code>FIREBASE_CONFIG</code> at the bottom of this file to enable them.</p>
+    <div class="lib-grid" id="mGrid"></div>
+    <div class="lib-status" id="mStatus" role="status" aria-live="polite"></div>
+    <p class="note"><button class="navbtn" id="adminBtn" type="button">Admin login</button></p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="head center reveal">
+      <div class="eyebrow">My Editing Skills</div>
+      <h2 class="title">Craft behind every cut</h2>
+    </div>
+    <div class="skills" id="skillList"></div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools" id="tools">
+  <div class="container">
+    <div class="head center reveal">
+      <div class="eyebrow">Software &amp; Tools</div>
+      <h2 class="title">My editing toolkit</h2>
+    </div>
+    <div class="grid3">
+      <div class="card tool reveal"><div class="tlogo" style="background:#00005b;color:#9999ff;border:2px solid #9999ff">Pr</div><h3>Adobe Premiere Pro</h3><p>Professional timeline editing</p></div>
+      <div class="card tool reveal"><div class="tlogo" style="background:#001e36;color:#31a8ff;border:2px solid #31a8ff">Ps</div><h3>Adobe Photoshop</h3><p>Thumbnails &amp; image retouching</p></div>
+      <div class="card tool reveal"><div class="tlogo" style="background:#1a1233;color:#c4b5fd;border:2px solid #7c5cff">FC</div><h3>FilmCraft by ArtCraft</h3><p>Creative editing &amp; effects</p></div>
+    </div>
+    <p class="note">Replace the lettered badges with official logo images (&lt;img&gt;) if you have them.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="head center reveal">
+      <div class="eyebrow">Client Testimonials</div>
+      <h2 class="title">Kind words from clients</h2>
+    </div>
+    <div class="grid3" id="testiGrid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <div class="eyebrow">Contact</div>
+      <h2 class="title">Have a Project in Mind? Let's Work Together.</h2>
+      <p class="lead">Looking for a creative video editor for your next project? Let's discuss your ideas and create something amazing together.</p>
+      <div class="info">
+        <div><small>Name</small>M. Mohamed Safeek</div>
+        <div><small>Email</small><a href="mailto:mohamedsafeekavc@gmail.com">mohamedsafeekavc@gmail.com</a></div>
+      </div>
+      <a class="btn btn-primary" href="mailto:mohamedsafeekavc@gmail.com?subject=Video%20Editing%20Project%20Enquiry">&#9993; Email Me</a>
+    </div>
+    <form id="contactForm" class="reveal" novalidate>
+      <label>Client Name<input type="text" name="name" required autocomplete="name" placeholder="Your name"></label>
+      <label>Email Address<input type="email" name="email" required autocomplete="email" placeholder="you@example.com"></label>
+      <label>Project Type
+        <select name="type" required>
+          <option value="">Select a project type</option>
+          <option>YouTube Video Editing</option>
+          <option>Instagram Reels / YouTube Shorts</option>
+          <option>Cinematic Video Editing</option>
+          <option>Promotional Video</option>
+          <option>Social Media Content</option>
+          <option>Basic Motion Graphics</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label>Project Details<textarea name="details" required placeholder="Tell me about your project, timeline and budget"></textarea></label>
+      <button class="btn btn-primary" type="submit">Send Message</button>
+      <div class="status" id="formStatus" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <h3>M. Mohamed Safeek | Freelance Video Editor</h3>
+    <p>Turning Ideas Into Visual Stories.</p>
+    <div class="socials" id="socials"></div>
+    <p><a href="mailto:mohamedsafeekavc@gmail.com">mohamedsafeekavc@gmail.com</a></p>
+    <p class="copy">&copy; <span id="year"></span> M. Mohamed Safeek. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Media Library -->
+<div class="lib" id="lib" role="dialog" aria-modal="true" aria-labelledby="libTitle">
+  <div class="lib-wrap">
+    <div class="lib-head"><h2 id="libTitle">Media Library</h2><button id="libClose" type="button" aria-label="Close library">&times;</button></div>
+    <p class="lib-note">Create folders and add videos, audio, images or any other files. They are saved privately in this browser on this device, so visitors to your website cannot see them. Use "Add to portfolio" on a video to show it in the Work section of this browser.</p>
+    <div class="lib-bar">
+      <div class="crumbs" id="crumbs"></div>
+      <div class="lib-actions">
+        <button class="btn btn-ghost sm" id="newFolder" type="button">+ New folder</button>
+        <button class="btn btn-primary sm" id="upFilesBtn" type="button">Upload files</button>
+        <button class="btn btn-ghost sm" id="upFolderBtn" type="button">Upload folder</button>
+        <input type="file" id="upFiles" multiple hidden>
+        <input type="file" id="upFolder" webkitdirectory hidden>
+      </div>
+    </div>
+    <div class="drop" id="drop">Drag &amp; drop files here to add them to the open folder</div>
+    <div class="lib-grid" id="libGrid"></div>
+    <div class="lib-status" id="libStatus" role="status" aria-live="polite"></div>
+  </div>
+</div>
+
+<!-- Video modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="modal-box">
+    <div class="modal-top"><strong id="mTitle"></strong><button id="mClose" aria-label="Close video">&times;</button></div>
+    <div class="player" id="player"></div>
+  </div>
+</div>
+
+<script>
+/* =====================================================
+   EDIT YOUR CONTENT HERE
+   ===================================================== */
+
+/* Social links: replace "#" with your real profile URLs */
+const SOCIALS = [
+  {label:"Instagram", short:"IG", url:"#"},
+  {label:"YouTube",   short:"YT", url:"#"},
+  {label:"LinkedIn",  short:"in", url:"#"},
+  {label:"Behance",   short:"Be", url:"#"}
+];
+
+/* PROJECTS
+   Add / edit / remove objects. Fields:
+   title, category (one of CATEGORIES), desc,
+   thumb  : image path or URL (optional - gradient used if empty)
+   video  : YouTube link, or path to .mp4 (e.g. "videos/my-reel.mp4"); leave "" for placeholder
+   full   : link for "Watch Full Video" (optional, defaults to video)
+   placeholder: true while it's sample content (shows a "Placeholder" badge)  */
+const CATEGORIES = ["All Projects","Reels & Shorts","YouTube Videos","Cinematic Edits","Promotional Videos","Client Projects"];
+
+const PROJECTS = [
+  {title:"Sample Reel #1", category:"Reels & Shorts", desc:"Placeholder: fast-paced vertical edit with captions and beat-synced cuts.", thumb:"", video:"", full:"", placeholder:true},
+  {title:"Sample YouTube Edit", category:"YouTube Videos", desc:"Placeholder: long-form edit with pacing, B-roll and clean transitions.", thumb:"", video:"", full:"", placeholder:true},
+  {title:"Sample Cinematic Short", category:"Cinematic Edits", desc:"Placeholder: cinematic colour grade, slow motion and sound design.", thumb:"", video:"", full:"", placeholder:true},
+  {title:"Sample Promo Video", category:"Promotional Videos", desc:"Placeholder: brand promo with motion titles and product shots.", thumb:"", video:"", full:"", placeholder:true},
+  {title:"Sample Shorts Pack", category:"Reels & Shorts", desc:"Placeholder: a set of short clips cut from a longer video.", thumb:"", video:"", full:"", placeholder:true},
+  {title:"Sample Client Project", category:"Client Projects", desc:"Placeholder: replace with a real client project and describe your role.", thumb:"", video:"", full:"", placeholder:true}
+];
+
+/* TESTIMONIALS: placeholders. Replace with genuine feedback only. */
+const TESTIMONIALS = [
+  {text:"Placeholder testimonial. Replace this with genuine feedback from a real client.", name:"Client Name", role:"Role / Company", placeholder:true},
+  {text:"Placeholder testimonial. Replace this with genuine feedback from a real client.", name:"Client Name", role:"Role / Company", placeholder:true},
+  {text:"Placeholder testimonial. Replace this with genuine feedback from a real client.", name:"Client Name", role:"Role / Company", placeholder:true}
+];
+
+/* Skills: level is a percentage for the bar */
+const SKILLS = [
+  ["Video Editing",90],["Storytelling",88],["Colour Correction",85],["Cinematic Colour Grading",82],
+  ["Transitions & Effects",86],["Audio Synchronization",84],["Text Animation",80],["Social Media Video Editing",92]
+];
+
+const SERVICES = [
+  ["🎬","YouTube Video Editing","Engaging long-form videos with professional cuts and transitions."],
+  ["📱","Instagram Reels & YouTube Shorts","Dynamic short-form content with captions and engaging effects."],
+  ["🎞️","Cinematic Video Editing","Cinematic storytelling, colour grading, and visual effects."],
+  ["📣","Promotional Videos","Creative promotional videos for businesses and brands."],
+  ["🌐","Social Media Content","High-quality content designed for social media platforms."],
+  ["✨","Basic Motion Graphics","Animated text, titles, and visual elements."]
+];
+
+/* =====================================================
+   SITE LOGIC (no need to edit below)
+   ===================================================== */
+const $ = (s,r=document)=>r.querySelector(s);
+const esc = s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+$("#year").textContent = new Date().getFullYear();
+
+/* Nav */
+const header = $("header"), menu = $("#menu"), menuBtn = $("#menuBtn");
+addEventListener("scroll",()=>header.classList.toggle("scrolled",scrollY>30),{passive:true});
+menuBtn.onclick=()=>{const o=menu.classList.toggle("open");menuBtn.setAttribute("aria-expanded",o)};
+menu.addEventListener("click",e=>{if(e.target.tagName==="A"){menu.classList.remove("open");menuBtn.setAttribute("aria-expanded","false")}});
+
+/* Active link on scroll */
+const links=[...menu.querySelectorAll("a")];
+const secObs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting) links.forEach(l=>l.classList.toggle("active",l.getAttribute("href")==="#"+e.target.id));
+}),{rootMargin:"-45% 0px -50% 0px"});
+links.forEach(l=>{const s=$(l.getAttribute("href"));s&&secObs.observe(s)});
+
+/* Services */
+$("#serviceGrid").innerHTML = SERVICES.map(s=>`
+  <div class="card reveal"><div class="icon" aria-hidden="true">${s[0]}</div><h3>${esc(s[1])}</h3><p>${esc(s[2])}</p></div>`).join("");
+
+/* Skills */
+$("#skillList").innerHTML = SKILLS.map(s=>`
+  <div class="skill reveal"><div class="row"><span>${esc(s[0])}</span><span>${s[1]}%</span></div>
+  <div class="bar" role="progressbar" aria-valuenow="${s[1]}" aria-valuemin="0" aria-valuemax="100" aria-label="${esc(s[0])}"><i data-w="${s[1]}"></i></div></div>`).join("");
+
+/* Testimonials */
+$("#testiGrid").innerHTML = TESTIMONIALS.map(t=>`
+  <div class="card reveal">
+    ${t.placeholder?'<span class="ph">Placeholder</span>':''}
+    <div class="quote">&ldquo;${esc(t.text)}&rdquo;</div>
+    <div class="who"><div class="av" aria-hidden="true">&#128100;</div><div><b>${esc(t.name)}</b><span>${esc(t.role)}</span></div></div>
+  </div>`).join("");
+
+/* Socials */
+$("#socials").innerHTML = SOCIALS.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener" aria-label="${esc(s.label)}" title="${esc(s.label)}">${esc(s.short)}</a>`).join("");
+
+/* Portfolio */
+const gradients=["linear-gradient(135deg,#2a1b6e,#0e2a5c)","linear-gradient(135deg,#0e2a5c,#1b6e5a)","linear-gradient(135deg,#4b1b6e,#1b2a6e)","linear-gradient(135deg,#1b3a6e,#5a1b6e)"];
+let active="All Projects";
+const filtersEl=$("#filters"), projEl=$("#projects");
+filtersEl.innerHTML=CATEGORIES.map(c=>`<button class="filter${c===active?' on':''}" role="tab" data-c="${esc(c)}" aria-selected="${c===active}">${esc(c)}</button>`).join("");
+filtersEl.onclick=e=>{
+  const b=e.target.closest(".filter"); if(!b) return;
+  active=b.dataset.c;
+  filtersEl.querySelectorAll(".filter").forEach(x=>{const on=x===b;x.classList.toggle("on",on);x.setAttribute("aria-selected",on)});
+  renderProjects();
+};
+function renderProjects(){
+  const list=PROJECTS.map((p,i)=>({...p,i})).filter(p=>active==="All Projects"||p.category===active);
+  projEl.innerHTML=list.length?list.map(p=>`
+    <article class="project">
+      <button class="thumb" data-i="${p.i}" aria-label="Play ${esc(p.title)}" style="background:${gradients[p.i%gradients.length]}">
+        ${p.thumb?`<img src="${esc(p.thumb)}" alt="" loading="lazy">`:''}
+        ${p.placeholder?'<span class="badge">Placeholder</span>':''}
+        <span class="pbtn"></span>
+      </button>
+      <div class="pinfo">
+        <span class="cat">${esc(p.category)}</span>
+        <h3>${esc(p.title)}</h3>
+        <p>${esc(p.desc)}</p>
+        <button class="watch" data-i="${p.i}">Watch Full Video &rarr;</button>
+      </div>
+    </article>`).join(""):`<p class="note" style="grid-column:1/-1">No projects in this category yet.</p>`;
+}
+renderProjects();
+
+/* Modal player */
+const modal=$("#modal"), player=$("#player");
+let lastFocus=null;
+function ytId(u){const m=String(u).match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);return m&&m[1]}
+function openProject(i){
+  const p=PROJECTS[i]; lastFocus=document.activeElement;
+  $("#mTitle").textContent=p.title;
+  const src=p.video||p.full; let html="";
+  if(p.isBlob||p.isCloud) html=`<video src="${esc(p.blobUrl)}" controls autoplay playsinline></video>`;
+  else if(src&&ytId(src)) html=`<iframe src="https://www.youtube-nocookie.com/embed/${ytId(src)}?autoplay=1&rel=0" title="${esc(p.title)}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+  else if(/\.(mp4|webm|mov)(\?|$)/i.test(src||"")) html=`<video src="${esc(src)}" controls autoplay playsinline></video>`;
+  else if(src) html=`<div><p style="margin-bottom:16px">This video opens on its own page.</p><a class="btn btn-primary" href="${esc(src)}" target="_blank" rel="noopener">Open Video</a></div>`;
+  else html=`<div><p><strong style="color:#fff">Placeholder project</strong><br>Add your video link in the PROJECTS list to play it here.</p></div>`;
+  player.innerHTML=html; modal.classList.add("open"); $("#mClose").focus();
+}
+function closeModal(){modal.classList.remove("open");player.innerHTML="";lastFocus&&lastFocus.focus()}
+projEl.addEventListener("click",e=>{const b=e.target.closest("[data-i]");if(b)openProject(+b.dataset.i)});
+$("#mClose").onclick=closeModal;
+modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
+addEventListener("keydown",e=>{if(e.key==="Escape"&&modal.classList.contains("open"))closeModal()});
+
+/* Contact form: opens the visitor's email app with the message pre-filled */
+$("#contactForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const f=e.target, st=$("#formStatus"), d=Object.fromEntries(new FormData(f));
+  if(!d.name.trim()||!/^\S+@\S+\.\S+$/.test(d.email)||!d.type||!d.details.trim()){
+    st.style.color="#ff7b7b"; st.textContent="Please fill in all fields with a valid email."; return;
+  }
+  const body=`Name: ${d.name}\nEmail: ${d.email}\nProject Type: ${d.type}\n\nProject Details:\n${d.details}`;
+  location.href=`mailto:mohamedsafeekavc@gmail.com?subject=${encodeURIComponent("Project Enquiry: "+d.type)}&body=${encodeURIComponent(body)}`;
+  st.style.color="#2ee59d"; st.textContent="Opening your email app to send the message...";
+});
+
+/* ===== Cloudinary videos =====
+   1) Put your Cloudinary cloud name below.
+   2) EITHER tag your videos in Cloudinary (reels, youtube, cinematic, promo, client)
+      and they appear automatically (needs "Resource list" enabled, see my notes),
+   3) OR list videos by hand in CLD_MANUAL with their Public ID. */
+const CLOUDINARY = {
+  cloudName: "p8k6mu37",
+  tags: {reels:"Reels & Shorts", youtube:"YouTube Videos", cinematic:"Cinematic Edits", promo:"Promotional Videos", client:"Client Projects"}
+};
+const CLD_MANUAL = [
+  // {title:"My First Reel", category:"Reels & Shorts", desc:"Short description", id:"folder/public_id_of_video"},
+];
+(async function(){
+  const cn=CLOUDINARY.cloudName.trim(); if(!cn) return;
+  const base=`https://res.cloudinary.com/${cn}/video/upload/`;
+  const make=(id,title,category,desc,ver)=>{
+    const v=ver?`v${ver}/`:"";
+    return {title,category,desc:desc||"",thumb:`${base}so_2,w_800,h_450,c_fill,f_jpg/${v}${id}.jpg`,
+            video:`${base}q_auto/${v}${id}.mp4`,full:`${base}q_auto/${v}${id}.mp4`,remote:true};
+  };
+  const found=[];
+  CLD_MANUAL.forEach(m=>found.push(make(m.id,m.title,m.category||CATEGORIES[1],m.desc)));
+  await Promise.all(Object.entries(CLOUDINARY.tags).map(async([tag,cat])=>{
+    try{
+      const r=await fetch(`https://res.cloudinary.com/${cn}/video/list/${tag}.json`);
+      if(!r.ok) return;
+      const j=await r.json();
+      (j.resources||[]).forEach(x=>{
+        const name=x.public_id.split("/").pop().replace(/[_-]+/g," ");
+        found.push(make(x.public_id,name,cat,"",x.version));
+      });
+    }catch(_){}
+  }));
+  if(!found.length) return;
+  for(let i=PROJECTS.length-1;i>=0;i--) if(PROJECTS[i].placeholder) PROJECTS.splice(i,1);
+  found.reverse().forEach(p=>PROJECTS.unshift(p));
+  renderProjects();
+})();
+
+/* ===== Media Library (saved in this browser with IndexedDB) ===== */
+(function(){
+const lib=$("#lib"), grid=$("#libGrid"), crumbs=$("#crumbs"), st=$("#libStatus");
+let db, cur=null, folders=[], files=[], projs=[], urls=[], pvUrl=null;
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+const byName=(a,b)=>a.name.localeCompare(b.name);
+const fmt=b=>b<1024?b+" B":b<1048576?(b/1024).toFixed(1)+" KB":b<1073741824?(b/1048576).toFixed(1)+" MB":(b/1073741824).toFixed(2)+" GB";
+const icons={image:"🖼️",video:"🎬",audio:"🎵",pdf:"📄",file:"📎"};
+const kind=f=>{const t=f.type||"",n=f.name.toLowerCase();
+  if(t.startsWith("image/"))return"image";
+  if(t.startsWith("video/")||/\.(mp4|mov|webm|mkv)$/.test(n))return"video";
+  if(t.startsWith("audio/")||/\.(mp3|wav|m4a|aac|ogg)$/.test(n))return"audio";
+  if(t==="application/pdf")return"pdf";return"file"};
+
+function openDB(){return new Promise((res,rej)=>{
+  const r=indexedDB.open("portfolioDB",1);
+  r.onupgradeneeded=()=>{const d=r.result;["folders","files","projects"].forEach(s=>d.createObjectStore(s,{keyPath:"id"}))};
+  r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+const tx=(s,m,fn)=>new Promise((res,rej)=>{const t=db.transaction(s,m);const r=fn(t.objectStore(s));
+  t.oncomplete=()=>res(r&&r.result);t.onerror=()=>rej(t.error);t.onabort=()=>rej(t.error)});
+const all=s=>tx(s,"readonly",o=>o.getAll());
+const put=(s,v)=>tx(s,"readwrite",o=>o.put(v));
+const del=(s,k)=>tx(s,"readwrite",o=>o.delete(k));
+
+async function refresh(){folders=await all("folders");files=await all("files");projs=await all("projects");render();usage()}
+async function usage(){
+  try{if(navigator.storage&&navigator.storage.estimate){const e=await navigator.storage.estimate();
+    st.textContent=`Browser storage used: ${fmt(e.usage||0)} of about ${fmt(e.quota||0)} available.`}}catch(_){}}
+
+const folderCard=f=>{
+  const n=files.filter(x=>(x.folder||null)===f.id).length+folders.filter(x=>x.parent===f.id).length;
+  return `<div class="lcard folder" data-act="open" data-id="${f.id}" tabindex="0" role="button" aria-label="Open folder ${esc(f.name)}">
+    <div class="lthumb big">📁</div>
+    <div class="lmeta"><b title="${esc(f.name)}">${esc(f.name)}</b><span>${n} item${n===1?"":"s"}</span></div>
+    <div class="lbtns"><button type="button" data-act="rename-folder" data-id="${f.id}">Rename</button><button type="button" data-act="del-folder" data-id="${f.id}">Delete</button></div></div>`};
+
+const fileCard=f=>{
+  const k=kind(f); let th=`<div class="lthumb big">${icons[k]}</div>`;
+  if(k==="image"){const u=URL.createObjectURL(f.blob);urls.push(u);th=`<div class="lthumb"><img src="${u}" alt="" loading="lazy"></div>`}
+  else if(k==="video"){const u=URL.createObjectURL(f.blob);urls.push(u);th=`<div class="lthumb"><video src="${u}#t=0.5" preload="metadata" muted playsinline></video><span class="vtag">&#9654;</span></div>`}
+  const inP=projs.some(p=>p.fileId===f.id);
+  return `<div class="lcard">
+    <button type="button" class="lthumbbtn" data-act="preview" data-id="${f.id}" aria-label="Open ${esc(f.name)}">${th}</button>
+    <div class="lmeta"><b title="${esc(f.name)}">${esc(f.name)}</b><span>${fmt(f.size)}${inP?" · in portfolio":""}</span></div>
+    <div class="lbtns">
+      <button type="button" data-act="preview" data-id="${f.id}">Open</button>
+      <button type="button" data-act="download" data-id="${f.id}">Download</button>
+      <button type="button" data-act="rename-file" data-id="${f.id}">Rename</button>
+      ${k==="video"?`<button type="button" data-act="portfolio" data-id="${f.id}">${inP?"Remove from portfolio":"Add to portfolio"}</button>`:""}
+      <button type="button" data-act="del-file" data-id="${f.id}">Delete</button>
+    </div></div>`};
+
+function render(){
+  urls.forEach(u=>URL.revokeObjectURL(u));urls=[];
+  const path=[];let c=cur;
+  while(c){const f=folders.find(x=>x.id===c);if(!f)break;path.unshift(f);c=f.parent}
+  if(cur&&!path.length)cur=null;
+  crumbs.innerHTML=`<button type="button" data-go="">Library</button>`+path.map(f=>` / <button type="button" data-go="${f.id}">${esc(f.name)}</button>`).join("");
+  const sub=folders.filter(f=>(f.parent||null)===cur).sort(byName);
+  const fl=files.filter(f=>(f.folder||null)===cur).sort(byName);
+  grid.innerHTML=(sub.length||fl.length)?sub.map(folderCard).join("")+fl.map(fileCard).join(""):`<p class="lib-empty">This folder is empty. Create a folder or upload files.</p>`;
+}
+
+async function addFiles(list){
+  const arr=[...list]; if(!arr.length)return;
+  const cache={}; let n=0;
+  try{
+    for(const f of arr){
+      let parent=cur;
+      if(f.webkitRelativePath&&f.webkitRelativePath.includes("/")){
+        const parts=f.webkitRelativePath.split("/");parts.pop();
+        let par=cur,key="";
+        for(const p of parts){
+          key+="/"+p;
+          if(!cache[key]){
+            const ex=folders.find(x=>(x.parent||null)===par&&x.name===p);
+            if(ex)cache[key]=ex.id;
+            else{const nf={id:uid(),name:p,parent:par};await put("folders",nf);folders.push(nf);cache[key]=nf.id}
+          }
+          par=cache[key];
+        }
+        parent=par;
+      }
+      await put("files",{id:uid(),folder:parent,name:f.name,type:f.type,size:f.size,added:Date.now(),blob:f});
+      st.textContent=`Saving ${++n} of ${arr.length}...`;
+    }
+    await refresh(); st.textContent=`Added ${n} file${n===1?"":"s"}.`;
+  }catch(err){
+    await refresh();
+    st.textContent=(err&&err.name==="QuotaExceededError")?"Not enough browser storage for these files. Try fewer or smaller files.":"Could not save: "+(err&&err.message||err);
+  }
+}
+
+function descendants(id){let out=[id];folders.filter(f=>f.parent===id).forEach(f=>out.push(...descendants(f.id)));return out}
+
+async function syncPortfolio(){
+  for(let i=PROJECTS.length-1;i>=0;i--)if(PROJECTS[i].isBlob){URL.revokeObjectURL(PROJECTS[i].blobUrl);PROJECTS.splice(i,1)}
+  const ps=await all("projects"), fs=await all("files");
+  ps.forEach(p=>{const f=fs.find(x=>x.id===p.fileId);
+    if(f)PROJECTS.unshift({title:p.title,category:p.category,desc:p.desc||"Added from my media library.",thumb:"",video:"",full:"",isBlob:true,blobUrl:URL.createObjectURL(f.blob)})});
+  renderProjects();
+}
+
+function preview(f){
+  lastFocus=document.activeElement;
+  if(pvUrl)URL.revokeObjectURL(pvUrl);
+  pvUrl=URL.createObjectURL(f.blob);
+  const k=kind(f);let h;
+  if(k==="video")h=`<video src="${pvUrl}" controls autoplay playsinline></video>`;
+  else if(k==="audio")h=`<audio src="${pvUrl}" controls autoplay style="width:90%"></audio>`;
+  else if(k==="image")h=`<img src="${pvUrl}" alt="${esc(f.name)}" style="max-width:100%;max-height:100%;object-fit:contain">`;
+  else if(k==="pdf")h=`<iframe src="${pvUrl}" title="${esc(f.name)}"></iframe>`;
+  else h=`<div><p>No preview for this file type.</p><p style="margin-top:12px"><a class="btn btn-primary" href="${pvUrl}" download="${esc(f.name)}">Download ${esc(f.name)}</a></p></div>`;
+  $("#mTitle").textContent=f.name;player.innerHTML=h;modal.classList.add("open");$("#mClose").focus();
+}
+
+grid.addEventListener("click",async e=>{
+  const b=e.target.closest("[data-act]"); if(!b)return;
+  const id=b.dataset.id, act=b.dataset.act;
+  const file=files.find(x=>x.id===id), folder=folders.find(x=>x.id===id);
+  if(act==="open"){cur=id;render()}
+  else if(act==="preview"&&file)preview(file);
+  else if(act==="download"&&file){const u=URL.createObjectURL(file.blob),a=document.createElement("a");a.href=u;a.download=file.name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}
+  else if(act==="rename-file"&&file){const n=prompt("Rename file:",file.name);if(n&&n.trim()){file.name=n.trim();await put("files",file);refresh()}}
+  else if(act==="rename-folder"&&folder){const n=prompt("Rename folder:",folder.name);if(n&&n.trim()){folder.name=n.trim();await put("folders",folder);refresh()}}
+  else if(act==="del-file"&&file){
+    if(!confirm(`Delete "${file.name}"?`))return;
+    for(const p of projs.filter(p=>p.fileId===id))await del("projects",p.id);
+    await del("files",id);await refresh();syncPortfolio();
+  }
+  else if(act==="del-folder"&&folder){
+    const ids=descendants(id), fl=files.filter(x=>ids.includes(x.folder));
+    if(!confirm(`Delete folder "${folder.name}" and everything inside it (${fl.length} file${fl.length===1?"":"s"})?`))return;
+    for(const f of fl){for(const p of projs.filter(p=>p.fileId===f.id))await del("projects",p.id);await del("files",f.id)}
+    for(const fid of ids)await del("folders",fid);
+    await refresh();syncPortfolio();
+  }
+  else if(act==="portfolio"&&file){
+    const ex=projs.find(p=>p.fileId===id);
+    if(ex){await del("projects",ex.id)}
+    else{
+      const title=prompt("Project title:",file.name.replace(/\.[^.]+$/,""));if(title===null)return;
+      const cats=CATEGORIES.slice(1);
+      const ans=prompt("Category number:\n"+cats.map((c,i)=>(i+1)+". "+c).join("\n"),"1");
+      const cat=cats[(parseInt(ans)||1)-1]||cats[0];
+      await put("projects",{id:uid(),fileId:id,title:title.trim()||file.name,category:cat,desc:""});
+    }
+    await refresh();syncPortfolio();
+  }
+});
+grid.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.classList.contains("folder")){cur=e.target.dataset.id;render()}});
+crumbs.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(b){cur=b.dataset.go||null;render()}});
+
+$("#newFolder").onclick=async()=>{
+  const n=prompt("Folder name:");if(!n||!n.trim())return;
+  await put("folders",{id:uid(),name:n.trim(),parent:cur});refresh();
+};
+$("#upFilesBtn").onclick=()=>$("#upFiles").click();
+$("#upFolderBtn").onclick=()=>$("#upFolder").click();
+$("#upFiles").onchange=e=>{addFiles(e.target.files);e.target.value=""};
+$("#upFolder").onchange=e=>{addFiles(e.target.files);e.target.value=""};
+const drop=$("#drop");
+["dragenter","dragover"].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.add("over")}));
+["dragleave","drop"].forEach(t=>drop.addEventListener(t,e=>{e.preventDefault();drop.classList.remove("over")}));
+drop.addEventListener("drop",e=>addFiles(e.dataTransfer.files));
+
+function openLib(){lastFocus=document.activeElement;lib.classList.add("open");document.body.style.overflow="hidden";menu.classList.remove("open");$("#libClose").focus()}
+function closeLib(){lib.classList.remove("open");document.body.style.overflow="";lastFocus&&lastFocus.focus&&lastFocus.focus()}
+$("#libOpen").onclick=openLib;
+$("#libClose").onclick=closeLib;
+addEventListener("keydown",e=>{if(e.key==="Escape"&&lib.classList.contains("open")&&!modal.classList.contains("open"))closeLib()},true);
+
+if(!window.indexedDB){st.textContent="This browser does not support local file storage."}
+else openDB().then(d=>{db=d;if(navigator.storage&&navigator.storage.persist)navigator.storage.persist();refresh();syncPortfolio()})
+  .catch(()=>{st.textContent="Could not open browser storage (private browsing can block it)."});
+})();
+
+/* Scroll reveal + skill bars */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting) return;
+  e.target.classList.add("in");
+  const bar=e.target.querySelector(".bar i"); if(bar) bar.style.width=bar.dataset.w+"%";
+  io.unobserve(e.target);
+}),{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+<script type="module">
+/* =====================================================
+   ONLINE UPLOADS (Firebase). Fill in these settings.
+   Steps are explained in my message; leave apiKey empty to keep this off.
+   ===================================================== */
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyDXjAVeWAhYuhvUKn5517YIvHXaTZHvuQA",
+  authDomain: "safeek-portfolio.firebaseapp.com",
+  databaseURL: "https://safeek-portfolio-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "safeek-portfolio",
+  storageBucket: "safeek-portfolio.firebasestorage.app",
+  appId: "1:921141606828:web:da6d23944d2d2e8f6a6209"
+};
+const ADMIN_EMAIL = "mohamedsafeekavc@gmail.com"; // only this Google account can upload
+
+const g = s => document.querySelector(s);
+const grid = g("#mGrid"), crumbs = g("#mCrumbs"), st = g("#mStatus"),
+      adminBar = g("#mAdmin"), setup = g("#mSetup"), adminBtn = g("#adminBtn");
+
+if (!FIREBASE_CONFIG.apiKey) { setup.hidden = false; adminBtn.hidden = true; }
+else init().catch(e => { st.textContent = "Could not start online storage: " + e.message; });
+
+async function init() {
+  const V = "13.4.0", base = `https://www.gstatic.com/firebasejs/${V}/`;
+  const [{ initializeApp }, A, F, S] = await Promise.all([
+    import(base + "firebase-app.js"), import(base + "firebase-auth.js"),
+    import(base + "firebase-database.js"), import(base + "firebase-storage.js")]);
+  const app = initializeApp(FIREBASE_CONFIG), auth = A.getAuth(app),
+        fdb = F.getDatabase(app), stg = S.getStorage(app);
+
+  let cur = null, folders = [], files = [], admin = false;
+  const fmt = b => b < 1024 ? b + " B" : b < 1048576 ? (b/1024).toFixed(1) + " KB" : b < 1073741824 ? (b/1048576).toFixed(1) + " MB" : (b/1073741824).toFixed(2) + " GB";
+  const icons = { image:"🖼️", video:"🎬", audio:"🎵", pdf:"📄", file:"📎" };
+  const kind = f => { const t = f.type || "", n = f.name.toLowerCase();
+    if (t.startsWith("image/")) return "image";
+    if (t.startsWith("video/") || /\.(mp4|mov|webm|mkv)$/.test(n)) return "video";
+    if (t.startsWith("audio/") || /\.(mp3|wav|m4a|aac|ogg)$/.test(n)) return "audio";
+    if (t === "application/pdf") return "pdf"; return "file"; };
+  const byName = (a, b) => a.name.localeCompare(b.name);
+  function thumbFor(f) {
+    const y = ytId(f.url); if (y) return `https://img.youtube.com/vi/${y}/hqdefault.jpg`;
+    if (/res\.cloudinary\.com/.test(f.url) && f.url.includes("/video/upload/"))
+      return f.url.replace("/video/upload/", "/video/upload/so_2,w_600,h_340,c_fill,f_jpg/").replace(/\.(mp4|mov|webm|mkv)(\?.*)?$/i, ".jpg");
+    return "";
+  }
+
+  async function load() {
+    try {
+      const [a, b] = await Promise.all([F.get(F.ref(fdb, "folders")), F.get(F.ref(fdb, "files"))]);
+      const list = s => Object.entries(s.val() || {}).map(([id, v]) => ({ id, ...v }));
+      folders = list(a); files = list(b);
+      render(); syncPortfolio();
+    } catch (e) { st.textContent = "Could not load files: " + e.message; }
+  }
+
+  function syncPortfolio() {
+    for (let i = PROJECTS.length - 1; i >= 0; i--) if (PROJECTS[i].fromDb) PROJECTS.splice(i, 1);
+    const real = files.filter(f => f.inPortfolio);
+    if (real.length) for (let i = PROJECTS.length - 1; i >= 0; i--) if (PROJECTS[i].placeholder) PROJECTS.splice(i, 1);
+    real.forEach(f => {
+      const yt = !!ytId(f.url);
+      PROJECTS.unshift({ title: f.pTitle || f.name, category: f.pCategory || CATEGORIES[1], desc: "",
+        thumb: thumbFor(f), video: yt ? f.url : "", full: yt ? f.url : "", isCloud: !yt, blobUrl: f.url, fromDb: true });
+    });
+    renderProjects();
+  }
+
+  const folderCard = f => {
+    const n = files.filter(x => (x.folder || null) === f.id).length + folders.filter(x => x.parent === f.id).length;
+    return `<div class="lcard folder" data-act="open" data-id="${f.id}" tabindex="0" role="button" aria-label="Open folder ${esc(f.name)}">
+      <div class="lthumb big">📁</div>
+      <div class="lmeta"><b title="${esc(f.name)}">${esc(f.name)}</b><span>${n} item${n === 1 ? "" : "s"}</span></div>
+      ${admin ? `<div class="lbtns"><button type="button" data-act="rename-folder" data-id="${f.id}">Rename</button><button type="button" data-act="del-folder" data-id="${f.id}">Delete</button></div>` : `<div class="lbtns"></div>`}</div>`; };
+
+  const fileCard = f => {
+    const k = kind(f); let th = `<div class="lthumb big">${icons[k]}</div>`;
+    if (k === "image") th = `<div class="lthumb"><img src="${esc(f.url)}" alt="${esc(f.name)}" loading="lazy"></div>`;
+    else if (k === "video") { const t = thumbFor(f);
+      th = t ? `<div class="lthumb"><img src="${esc(t)}" alt="" loading="lazy"><span class="vtag">&#9654;</span></div>`
+             : `<div class="lthumb"><video src="${esc(f.url)}#t=0.5" preload="metadata" muted playsinline></video><span class="vtag">&#9654;</span></div>`; }
+    return `<div class="lcard">
+      <button type="button" class="lthumbbtn" data-act="preview" data-id="${f.id}" aria-label="Open ${esc(f.name)}">${th}</button>
+      <div class="lmeta"><b title="${esc(f.name)}">${esc(f.name)}</b><span>${f.size ? fmt(f.size) : "Link"}${f.inPortfolio ? " · in portfolio" : ""}</span></div>
+      <div class="lbtns">
+        <button type="button" data-act="preview" data-id="${f.id}">Open</button>
+        <button type="button" data-act="download" data-id="${f.id}">Download</button>
+        ${admin ? `<button type="button" data-act="rename-file" data-id="${f.id}">Rename</button>
+          ${k === "video" ? `<button type="button" data-act="portfolio" data-id="${f.id}">${f.inPortfolio ? "Remove from portfolio" : "Add to portfolio"}</button>` : ""}
+          <button type="button" data-act="del-file" data-id="${f.id}">Delete</button>` : ""}
+      </div></div>`; };
+
+  function render() {
+    const path = []; let c = cur;
+    while (c) { const f = folders.find(x => x.id === c); if (!f) break; path.unshift(f); c = f.parent || null; }
+    if (cur && !path.length) cur = null;
+    crumbs.innerHTML = `<button type="button" data-go="">Media</button>` + path.map(f => ` / <button type="button" data-go="${f.id}">${esc(f.name)}</button>`).join("");
+    const sub = folders.filter(f => (f.parent || null) === cur).sort(byName);
+    const fl = files.filter(f => (f.folder || null) === cur).sort(byName);
+    grid.innerHTML = (sub.length || fl.length) ? sub.map(folderCard).join("") + fl.map(fileCard).join("")
+      : `<p class="lib-empty">${admin ? "This folder is empty. Create a folder or upload files." : "Nothing here yet."}</p>`;
+  }
+
+  function preview(f) {
+    lastFocus = document.activeElement;
+    const k = kind(f), u = esc(f.url); let h;
+    if (ytId(f.url)) h = `<iframe src="https://www.youtube-nocookie.com/embed/${ytId(f.url)}?autoplay=1&rel=0" title="${esc(f.name)}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+    else if (k === "video") h = `<video src="${u}" controls autoplay playsinline></video>`;
+    else if (k === "audio") h = `<audio src="${u}" controls autoplay style="width:90%"></audio>`;
+    else if (k === "image") h = `<img src="${u}" alt="${esc(f.name)}" style="max-width:100%;max-height:100%;object-fit:contain">`;
+    else if (k === "pdf") h = `<iframe src="${u}" title="${esc(f.name)}"></iframe>`;
+    else h = `<div><p>No preview for this file type.</p><p style="margin-top:12px"><a class="btn btn-primary" href="${u}" target="_blank" rel="noopener">Open / download ${esc(f.name)}</a></p></div>`;
+    g("#mTitle").textContent = f.name; player.innerHTML = h; modal.classList.add("open"); g("#mClose").focus();
+  }
+
+  const descendants = id => { let o = [id]; folders.filter(f => f.parent === id).forEach(f => o.push(...descendants(f.id))); return o; };
+  async function removeFile(f) {
+    try { await S.deleteObject(S.ref(stg, f.path)); } catch (_) {}
+    await F.remove(F.ref(fdb, "files/" + f.id));
+  }
+
+  grid.addEventListener("click", async e => {
+    const b = e.target.closest("[data-act]"); if (!b) return;
+    const id = b.dataset.id, act = b.dataset.act;
+    const file = files.find(x => x.id === id), folder = folders.find(x => x.id === id);
+    try {
+      if (act === "open") { cur = id; render(); }
+      else if (act === "preview" && file) preview(file);
+      else if (act === "download" && file) window.open(file.url, "_blank", "noopener");
+      else if (!admin) return;
+      else if (act === "rename-file" && file) { const n = prompt("Rename file:", file.name); if (n && n.trim()) { await F.update(F.ref(fdb, "files/" + id), { name: n.trim() }); await load(); } }
+      else if (act === "rename-folder" && folder) { const n = prompt("Rename folder:", folder.name); if (n && n.trim()) { await F.update(F.ref(fdb, "folders/" + id), { name: n.trim() }); await load(); } }
+      else if (act === "del-file" && file) { if (!confirm(`Delete "${file.name}"?`)) return; await removeFile(file); await load(); }
+      else if (act === "del-folder" && folder) {
+        const ids = descendants(id), fl = files.filter(x => ids.includes(x.folder));
+        if (!confirm(`Delete folder "${folder.name}" and everything inside it (${fl.length} file${fl.length === 1 ? "" : "s"})?`)) return;
+        for (const f of fl) await removeFile(f);
+        for (const fid of ids) await F.remove(F.ref(fdb, "folders/" + fid));
+        await load();
+      }
+      else if (act === "portfolio" && file) {
+        if (file.inPortfolio) await F.update(F.ref(fdb, "files/" + id), { inPortfolio: false });
+        else {
+          const title = prompt("Project title:", file.name.replace(/\.[^.]+$/, "")); if (title === null) return;
+          const cats = CATEGORIES.slice(1);
+          const ans = prompt("Category number:\n" + cats.map((c, i) => (i + 1) + ". " + c).join("\n"), "1");
+          await F.update(F.ref(fdb, "files/" + id), { inPortfolio: true, pTitle: title.trim() || file.name, pCategory: cats[(parseInt(ans) || 1) - 1] || cats[0] });
+        }
+        await load();
+      }
+    } catch (err) { st.textContent = "Action failed: " + err.message; }
+  });
+  grid.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.classList.contains("folder")) { cur = e.target.dataset.id; render(); } });
+  crumbs.addEventListener("click", e => { const b = e.target.closest("[data-go]"); if (b) { cur = b.dataset.go || null; render(); } });
+
+  async function upload(list) {
+    const arr = [...list]; if (!arr.length || !admin) return;
+    const cache = {}; let n = 0;
+    for (const f of arr) {
+      try {
+        let parent = cur;
+        if (f.webkitRelativePath && f.webkitRelativePath.includes("/")) {
+          const parts = f.webkitRelativePath.split("/"); parts.pop();
+          let par = cur, key = "";
+          for (const p of parts) {
+            key += "/" + p;
+            if (!cache[key]) {
+              const ex = folders.find(x => (x.parent || null) === par && x.name === p);
+              if (ex) cache[key] = ex.id;
+              else { const d = { name: p, parent: par, created: Date.now() }; const r = await F.push(F.ref(fdb, "folders"), d); folders.push({ id: r.key, ...d }); cache[key] = r.key; }
+            }
+            par = cache[key];
+          }
+          parent = par;
+        }
+        const path = `media/${Date.now()}_${Math.random().toString(36).slice(2, 7)}/${f.name}`;
+        const r = S.ref(stg, path);
+        const task = S.uploadBytesResumable(r, f, f.type ? { contentType: f.type } : undefined);
+        await new Promise((res, rej) => task.on("state_changed",
+          s => { st.textContent = `Uploading ${f.name} (${n + 1} of ${arr.length}): ${Math.round(s.bytesTransferred / s.totalBytes * 100)}%`; }, rej, res));
+        const url = await S.getDownloadURL(r);
+        await F.push(F.ref(fdb, "files"), { folder: parent, name: f.name, type: f.type || "", size: f.size, url, path, inPortfolio: false, created: Date.now() });
+        n++;
+      } catch (err) { st.textContent = `Failed on ${f.name}: ${err.message}`; await load(); return; }
+    }
+    await load(); st.textContent = `Uploaded ${n} file${n === 1 ? "" : "s"}.`;
+  }
+
+  g("#mNewFolder").onclick = async () => {
+    const n = prompt("Folder name:"); if (!n || !n.trim()) return;
+    try { await F.push(F.ref(fdb, "folders"), { name: n.trim(), parent: cur, created: Date.now() }); await load(); }
+    catch (err) { st.textContent = "Could not create folder: " + err.message; }
+  };
+  g("#mLinkBtn").onclick = async () => {
+    if (!admin) return;
+    const raw = prompt("Paste a link (Cloudinary, YouTube or any direct file link),\nor a Cloudinary video Public ID:");
+    if (!raw || !raw.trim()) return;
+    let url = raw.trim(), type = "", def = "";
+    if (!/^https?:\/\//i.test(url)) {
+      const cn = CLOUDINARY.cloudName.trim();
+      if (!cn) { st.textContent = "Set your Cloudinary cloud name in CLOUDINARY first."; return; }
+      const id = url.replace(/\.(mp4|mov|webm)$/i, "");
+      url = `https://res.cloudinary.com/${cn}/video/upload/q_auto/${id}.mp4`;
+      type = "video/mp4"; def = id.split("/").pop().replace(/[_-]+/g, " ");
+    } else if (ytId(url)) { type = "video/youtube"; def = "YouTube video"; }
+    else {
+      const last = decodeURIComponent(url.split("?")[0].split("/").pop() || "");
+      const ext = ((last.match(/\.([a-z0-9]+)$/i) || [])[1] || "").toLowerCase();
+      def = last.replace(/\.[^.]+$/, "").replace(/[_-]+/g, " ") || "File";
+      if (/^(mp4|mov|webm|mkv)$/.test(ext)) type = "video/mp4";
+      else if (/^(mp3|wav|m4a|aac|ogg)$/.test(ext)) type = "audio/mpeg";
+      else if (/^(jpg|jpeg|png|gif|webp)$/.test(ext)) type = "image/" + (ext === "jpg" ? "jpeg" : ext);
+      else if (ext === "pdf") type = "application/pdf";
+    }
+    const title = prompt("Title:", def); if (title === null) return;
+    try {
+      await F.push(F.ref(fdb, "files"), { folder: cur, name: title.trim() || def || "File", type, size: 0, url, path: "", inPortfolio: false, created: Date.now() });
+      await load(); st.textContent = "Added.";
+    } catch (err) { st.textContent = "Could not add: " + err.message; }
+  };
+
+  A.onAuthStateChanged(auth, u => {
+    admin = !!u && u.email === ADMIN_EMAIL && u.emailVerified;
+    adminBar.hidden = !admin;
+    adminBtn.textContent = u ? "Sign out" : "Admin login";
+    if (u && !admin) { st.textContent = "This account is not allowed to upload."; A.signOut(auth); }
+    render();
+  });
+  adminBtn.onclick = () => auth.currentUser ? A.signOut(auth)
+    : A.signInWithPopup(auth, new A.GoogleAuthProvider()).catch(e => { st.textContent = e.message; });
+
+  await load();
+}
+</script>
+</body>
+</html>
